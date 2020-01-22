@@ -24,8 +24,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   | a PHP script and you can easily do that on your own.
   |
  */
+//live
+if($_SERVER['HTTP_HOST'] == 'dev.filsrich.com'){
 $config['base_url'] = 'http://dev.filsrich.com';
-
+} elseif($_SERVER['HTTP_HOST'] == 'localhost'){
+//local
+$config['base_url'] = 'http://localhost/SHOP';
+}
 /*
   |--------------------------------------------------------------------------
   | Index File

@@ -1949,3 +1949,77 @@ ERROR - 2020-01-22 17:46:25 --> 404 Page Not Found: /index
 ERROR - 2020-01-22 17:48:29 --> 404 Page Not Found: /index
 ERROR - 2020-01-22 17:48:42 --> 404 Page Not Found: /index
 ERROR - 2020-01-22 17:50:36 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:47:57 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'filsrahc_admin98'@'localhost' (using password: YES) C:\xampp\htdocs\SHOP\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2020-01-22 19:47:57 --> Unable to connect to the database
+ERROR - 2020-01-22 19:48:48 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'filsrahc_admin98'@'localhost' (using password: YES) C:\xampp\htdocs\SHOP\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2020-01-22 19:48:48 --> Unable to connect to the database
+ERROR - 2020-01-22 19:48:56 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'filsrahc_admin98'@'localhost' (using password: YES) C:\xampp\htdocs\SHOP\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2020-01-22 19:48:56 --> Unable to connect to the database
+ERROR - 2020-01-22 19:49:46 --> Severity: error --> Exception: Call to undefined function print_() C:\xampp\htdocs\SHOP\application\config\database.php 76
+ERROR - 2020-01-22 19:50:02 --> Severity: error --> Exception: Call to undefined function print_f() C:\xampp\htdocs\SHOP\application\config\database.php 76
+ERROR - 2020-01-22 19:53:42 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:42 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:42 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:42 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:42 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:42 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:42 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:43 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:44 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:55 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:56 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:56 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:56 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:56 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:56 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:56 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:53:56 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:54:15 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:54:15 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:54:16 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:54:16 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:54:16 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:54:16 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:55:09 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:55:09 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:55:09 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:55:09 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:55:10 --> 404 Page Not Found: /index
+ERROR - 2020-01-22 19:55:10 --> 404 Page Not Found: /index
