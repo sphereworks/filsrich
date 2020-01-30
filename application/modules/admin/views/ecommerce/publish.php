@@ -48,21 +48,45 @@ if ($this->session->flashdata('result_publish')) {
                     <h5>Add Product</h5>
                 </div>
                 <div class="card-body">
+                <form method="POST" action="" enctype="multipart/form-data">
+                <input type="hidden" name="in_slider" value=<?= null ?> >
+                <input type="hidden" placeholder="Position number" name="position" value="<?= @$_POST['position'] ?>" class="form-control">
+                <input type="hidden" value="<?= isset($_POST['folder']) ? $_POST['folder'] : $timeNow ?>" name="folder">
+                <input type="hidden" name="translations[]" value="en" >
+                <input type="hidden" name="basic_description[]" id="basic_description" value="<?= $trans_load != null && isset($trans_load['en']['basic_description']) ? $trans_load['en']['basic_description'] : '' ?>" >
+                <input type="hidden" name="old_price[]"  value="<?= $trans_load != null && isset($trans_load['en']['old_price']) ? $trans_load['en']['old_price'] : '' ?>" class="form-control">
                     <div class="row product-adding">
                         <div class="col-xl-5">
                             <div class="add-product">
                                 <div class="row">
                                     <div class="col-xl-9 xl-50 col-sm-6 col-9">
-                                        <img src="<?= base_url('/backend_assets/images/pro3/1.jpg') ?>" alt="" class="img-fluid image_zoom_1 blur-up lazyloaded">
+                                    <?php
+                                            if (isset($_POST['image']) && $_POST['image'] != null) {
+                                                $image = 'attachments/shop_images/' . $_POST['image'];
+                                                if (!file_exists($image)) {
+                                                    $image = 'backend_assets/images/pro3/1.jpg';
+                                                }
+                                                ?>
+                                            
+                                                 <img src="<?= base_url($image) ?>" id="blah" class="img-fluid image_zoom_1 blur-up lazyloaded">
+                                         
+                                                <input type="hidden" name="old_image" value="<?= $_POST['image'] ?>">
+                                                <?php if (isset($_GET['to_lang'])) { ?>
+                                                    <input type="hidden" name="image" value="<?= $_POST['image'] ?>">
+                                                    <?php
+                                                }
+                                            }else { ?>
+                                            <img src="<?= base_url('/backend_assets/images/pro3/1.jpg') ?>" id="blah" alt="" class="img-fluid image_zoom_1 blur-up lazyloaded">
+                                           <?php }
+                                            ?>
+                                       
                                     </div>
                                     <div class="col-xl-3 xl-50 col-sm-6 col-3">
                                         <ul class="file-upload-product">
-                                            <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                            <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                            <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                            <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                            <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                            <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
+                                            <!-- <li><div class="box-input-file">
+                                            <?= $otherImgs ?>
+                                            </div></li> -->
+                                            <li><div class="box-input-file"><input class="upload" type="file"  id="userfile" name="userfile"><i class="fa fa-plus"></i></div></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -73,17 +97,30 @@ if ($this->session->flashdata('result_publish')) {
                                 <div class="form">
                                     <div class="form-group mb-3 row">
                                         <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Title :</label>
-                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom01" type="text" required="">
+                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom01" type="text" name="title[]" value="<?= $trans_load != null && isset($trans_load['en']['title']) ? $trans_load['en']['title'] : '' ?>" >
                                         <div class="valid-feedback">Looks good!</div>
                                     </div>
                                     <div class="form-group mb-3 row">
                                         <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price :</label>
-                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" type="text" required="">
+                                        
+                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" type="text" name="price[]" placeholder="without currency at the end" value="<?= $trans_load != null && isset($trans_load['en']['price']) ? $trans_load['en']['price'] : '' ?>"   >
                                         <div class="valid-feedback">Looks good!</div>
                                     </div>
                                     <div class="form-group mb-3 row">
-                                        <label for="validationCustomUsername" class="col-xl-3 col-sm-4 mb-0">Product Code :</label>
-                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustomUsername" type="text" required="">
+                                        <label for="validationCustomUsername" class="col-xl-3 col-sm-4 mb-0">Product Category :</label>
+                                        <select class="form-control digits col-xl-8 col-sm-7" name="shop_categorie">
+                                            <?php foreach ($shop_categories as $key_cat => $shop_categorie) { ?>
+                                                <option <?= isset($_POST['shop_categorie']) && $_POST['shop_categorie'] == $key_cat ? 'selected=""' : '' ?> value="<?= $key_cat ?>">
+                                                    <?php
+                                                    foreach ($shop_categorie['info'] as $nameAbbr) {
+                                                        if ($nameAbbr['abbr'] == $this->config->item('language_abbr')) {
+                                                            echo $nameAbbr['name'];
+                                                        }
+                                                    }
+                                                    ?>
+                                                </option>
+                                            <?php } ?>
+                                        </select>
                                         <div class="invalid-feedback offset-sm-4 offset-xl-3">Please choose Valid Code.</div>
                                     </div>
                                 </div>
@@ -101,23 +138,23 @@ if ($this->session->flashdata('result_publish')) {
                                         <label class="col-xl-3 col-sm-4 mb-0">Total Products :</label>
                                         <fieldset class="qty-box col-xl-9 col-xl-8 col-sm-7 pl-0">
                                             <div class="input-group">
-                                                <input class="touchspin" type="text" value="1">
+                                                <input class="touchspin"  name="quantity" type="text" value="<?= @$_POST['quantity'] ?  @$_POST['quantity'] : 0 ?>">
                                             </div>
                                         </fieldset>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-xl-3 col-sm-4">Add Description :</label>
                                         <div class="col-xl-8 col-sm-7 pl-0 description-sm">
-                                            <textarea id="editor1" name="editor1" cols="10" rows="4"></textarea>
+                                            <textarea id="editor1" name="description[]" cols="10" rows="4"><?= $trans_load != null && isset($trans_load['en']['description']) ? $trans_load['en']['description'] : '' ?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group mb-3 row">
                                         <label class="col-xl-3 col-sm-4 mb-0">Details : </label>
-                                        <input class="form-control col-xl-8 col-sm-7" type="text" required="">
+                                        <input class="form-control col-xl-8 col-sm-7" type="text"  >
                                     </div>
                                      <div class="form-group mb-3 row">
                                         <label class="col-xl-3 col-sm-4 mb-0">Meta Title : </label>
-                                        <input class="form-control col-xl-8 col-sm-7" type="text" required="">
+                                        <input class="form-control col-xl-8 col-sm-7" type="text"  >
                                     </div>
                                      <div class="form-group row">
                                         <label class="col-xl-3 col-sm-4">Add Description :</label>
@@ -127,82 +164,65 @@ if ($this->session->flashdata('result_publish')) {
                                     </div>
                                      <div class="form-group mb-3 row">
                                         <label class="col-xl-3 col-sm-4 mb-0">Meta Keywords : </label>
-                                        <input class="form-control col-xl-8 col-sm-7" type="text" required="">
+                                        <input class="form-control col-xl-8 col-sm-7" type="text"  >
                                     </div>
                                     <div class="form-group mb-3 row">
                                         <label class="col-xl-3 col-sm-4 mb-0">Slug : </label>
-                                        <input class="form-control col-xl-8 col-sm-7" type="text" required="">
+                                        <input class="form-control col-xl-8 col-sm-7" name="url" value="<?=  @$_POST['url'] ?  @$_POST['url'] :'' ?>" type="text"  >
                                     </div>
                                 </div>
                                 <div class="offset-xl-3 offset-sm-4">
-                                    <button type="submit" class="btn btn-primary">Add</button>
-                                    <button type="button" class="btn btn-light">Discard</button>
+                                    <button type="submit" name="submit" class="btn btn-primary">Publish</button>
+                                    <?php if ($this->uri->segment(3) !== null) { ?>
+                                    <a href="<?= base_url('admin/products') ?>" type="button" class="btn btn-light">Discard</a>
+                                    <?php } ?>
                                 </div>
                             </form>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Container-fluid Ends-->
+<!-- 
 <form method="POST" action="" enctype="multipart/form-data">
     <input type="hidden" value="<?= isset($_POST['folder']) ? $_POST['folder'] : $timeNow ?>" name="folder">
     <div class="form-group available-translations">
         <b>Languages</b>
-        <?php foreach ($languages as $language) { ?>
-            <button type="button" data-locale-change="<?= $language->abbr ?>" class="btn btn-default locale-change text-uppercase <?= $language->abbr == MY_DEFAULT_LANGUAGE_ABBR ? 'active' : '' ?>">
-                <img src="<?= base_url('attachments/lang_flags/' . $language->flag) ?>" alt="">
-                <?= $language->abbr ?>
-            </button>
-        <?php } ?>
+      
     </div>
-    <?php
-    $i = 0;
-    foreach ($languages as $language) {
-        ?>
-        <div class="locale-container locale-container-<?= $language->abbr ?>" <?= $language->abbr == MY_DEFAULT_LANGUAGE_ABBR ? 'style="display:block;"' : '' ?>>
-            <input type="hidden" name="translations[]" value="<?= $language->abbr ?>">
+        <div>
+            <input type="hidden" name="translations[]" value="en" >
             <div class="form-group"> 
-                <label>Title (<?= $language->name ?><img src="<?= base_url('attachments/lang_flags/' . $language->flag) ?>" alt="">)</label>
-                <input type="text" name="title[]" value="<?= $trans_load != null && isset($trans_load[$language->abbr]['title']) ? $trans_load[$language->abbr]['title'] : '' ?>" class="form-control">
+                <label>Title</label>
+                <input type="text" name="title[]" value="<?= $trans_load != null && isset($trans_load['en']['title']) ? $trans_load['en']['title'] : '' ?>" class="form-control">
             </div>
 
             <div class="form-group">
-                <a href="javascript:void(0);" class="btn btn-default showSliderDescrption" data-descr="<?= $i ?>">Show Slider Description <span class="glyphicon glyphicon-circle-arrow-down"></span></a>
+                <a href="javascript:void(0);" class="btn btn-default showSliderDescrption" data-descr="">Show Slider Description <span class="glyphicon glyphicon-circle-arrow-down"></span></a>
             </div>
-            <div class="theSliderDescrption" id="theSliderDescrption-<?= $i ?>" <?= isset($_POST['in_slider']) && $_POST['in_slider'] == 1 ? 'style="display:block;"' : '' ?>>
+            <div class="theSliderDescrption" id="theSliderDescrption-" <?= isset($_POST['in_slider']) && $_POST['in_slider'] == 1 ? 'style="display:block;"' : '' ?>>
                 <div class="form-group">
-                    <label for="basic_description<?= $i ?>">Slider Description (<?= $language->name ?><img src="<?= base_url('attachments/lang_flags/' . $language->flag) ?>" alt="">)</label>
-                    <textarea name="basic_description[]" id="basic_description<?= $i ?>" rows="50" class="form-control"><?= $trans_load != null && isset($trans_load[$language->abbr]['basic_description']) ? $trans_load[$language->abbr]['basic_description'] : '' ?></textarea>
-                    <script>
-                        CKEDITOR.replace('basic_description<?= $i ?>');
-                        CKEDITOR.config.entities = false;
-                    </script>
+                    <label for="basic_description">Slider Description </label>
+                    <textarea name="basic_description[]" id="basic_description" rows="50" class="form-control"><?= $trans_load != null && isset($trans_load['en']['basic_description']) ? $trans_load['en']['basic_description'] : '' ?></textarea>
                 </div>
             </div>
             <div class="form-group">
-                <label for="description<?= $i ?>">Description (<?= $language->name ?><img src="<?= base_url('attachments/lang_flags/' . $language->flag) ?>" alt="">)</label>
-                <textarea name="description[]" id="description<?= $i ?>" rows="50" class="form-control"><?= $trans_load != null && isset($trans_load[$language->abbr]['description']) ? $trans_load[$language->abbr]['description'] : '' ?></textarea>
-                <script>
-                    CKEDITOR.replace('description<?= $i ?>');
-                    CKEDITOR.config.entities = false;
-                </script>
+                <label for="description">Description</label>
+                <textarea name="description[]" id="description" rows="50" class="form-control"><?= $trans_load != null && isset($trans_load['en']['description']) ? $trans_load['en']['description'] : '' ?></textarea>
             </div>
             <div class="form-group for-shop">
-                <label>Price (<?= $language->name ?><img src="<?= base_url('attachments/lang_flags/' . $language->flag) ?>" alt="">)</label>
-                <input type="text" name="price[]" placeholder="without currency at the end" value="<?= $trans_load != null && isset($trans_load[$language->abbr]['price']) ? $trans_load[$language->abbr]['price'] : '' ?>" class="form-control">
+                <label>Price </label>
+                <input type="text" name="price[]" placeholder="without currency at the end" value="<?= $trans_load != null && isset($trans_load['en']['price']) ? $trans_load['en']['price'] : '' ?>" class="form-control">
             </div>
             <div class="form-group for-shop">
-                <label>Old Price (<?= $language->name ?><img src="<?= base_url('attachments/lang_flags/' . $language->flag) ?>" alt="">)</label>
-                <input type="text" name="old_price[]" placeholder="without currency at the end" value="<?= $trans_load != null && isset($trans_load[$language->abbr]['old_price']) ? $trans_load[$language->abbr]['old_price'] : '' ?>" class="form-control">
+                <label>Old Price </label>
+                <input type="text" name="old_price[]" placeholder="without currency at the end" value="<?= $trans_load != null && isset($trans_load['en']['old_price']) ? $trans_load['en']['old_price'] : '' ?>" class="form-control">
             </div>
         </div>
-        <?php
-        $i++;
-    }
-    ?>
+   
     <div class="form-group bordered-group">
         <?php
         if (isset($_POST['image']) && $_POST['image'] != null) {
@@ -281,7 +301,8 @@ if ($this->session->flashdata('result_publish')) {
     <?php if ($this->uri->segment(3) !== null) { ?>
         <a href="<?= base_url('admin/products') ?>" class="btn btn-lg btn-default">Cancel</a>
     <?php } ?>
-</form>
+</form> -->
+
 <!-- Modal Upload More Images -->
 <div class="modal fade" id="modalMoreImages" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">

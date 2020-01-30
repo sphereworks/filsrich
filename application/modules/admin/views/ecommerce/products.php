@@ -23,16 +23,16 @@
 
 <!-- Container-fluid starts-->
 <div class="container-fluid">
-    <div class="row products-admin ratio_asos">
+    <!-- <div class="row products-admin ratio_asos">
 <?php 
-    if ($products) {
-        foreach ($products as $row) {
-        $u_path = 'attachments/shop_images/';
-            if ($row->image != null && file_exists($u_path . $row->image)) {
-                $image = base_url($u_path . $row->image);
-            } else {
-                $image = base_url('attachments/no-image.png');
-            }
+    // if ($products) {
+    //     foreach ($products as $row) {
+    //     $u_path = 'attachments/shop_images/';
+    //         if ($row->image != null && file_exists($u_path . $row->image)) {
+    //             $image = base_url($u_path . $row->image);
+    //         } else {
+    //             $image = base_url('attachments/no-image.png');
+    //         }
         ?>
 
                 <div class="col-xl-3 col-sm-6">
@@ -47,7 +47,7 @@
                                                 <a href="<?= base_url('admin/publish/' . $row->id) ?>"class="btn" type="button" data-original-title="" title=""><i class="ti-pencil-alt"></i></a>
                                             </li>
                                             <li>
-                                                <a href="<?= base_url('admin/products?delete=' . $row->id) ?>" class="btn" type="button" data-toggle="modal" data-target="#exampleModalCenter" data-original-title="" title=""><i class="ti-trash"></i></a>
+                                                <a href="<?= base_url('admin/products?delete=' . $row->id) ?>" class="btn" type="button" data-original-title="" title=""><i class="ti-trash"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -68,9 +68,9 @@
                         </div>
                     </div>
                 </div>
-     <?php   } } ?> 
+     <?php  // } } ?> 
 
-        </div>
+        </div> -->
 
         <div class="products_list">
             <div class="container-fluid">
@@ -87,37 +87,32 @@
                                 <th>Product Title</th>
                                  <th>Entry Type</th>
                                 <th>Quantity</th>
-                                <th><i class="fa fa-plus" aria-hidden="true"></i></th>
+                                <th><a href="<?= base_url('admin/publish/'); ?>" ><i class="fa fa-plus" aria-hidden="true"></i></a></th>
                               </tr>
                             </thead>
                             <tbody>
+                            <?php
+                            if ($products) { $i = 1;
+                                foreach ($products as $row) {
+                                $u_path = 'attachments/shop_images/';
+                                    if ($row->image != null && file_exists($u_path . $row->image)) {
+                                        $image = base_url($u_path . $row->image);
+                                    } else {
+                                        $image = base_url('attachments/no-image.png');
+                                    }
+                                ?>
                               <tr>
-                                <td>21</td>
-                                <td><img src="<?= base_url('backend_assets/images/product-img/1.jpg') ?>"></td>
-                                <td>Websites</td>
+                                <td><?= $i ?></td>
+                                <td><img src="<?= $image ?>"></td>
+                                <td><?= $row->title ?></td>
                                 <td>Add</td>
-                                <td>5</td>
-                               <td><i class="fa fa-pencil" aria-hidden="true" id="edit"></i> <i class="fa fa-trash" aria-hidden="true" id="delete"></i> </td>
+                                <td><?= $row->quantity ?></td>
+                               <td><a href="<?= base_url('admin/publish/' . $row->id) ?>" class="btn" type="button" data-original-title="" title=""><i class="fa fa-pencil" aria-hidden="true" id="edit"></i></a> <a href="<?= base_url('admin/products?delete=' . $row->id) ?>" class="btn" type="button" data-original-title="" title=""><i class="fa fa-trash" aria-hidden="true" id="delete"></i></a> </td>
                               </tr>
-                               <tr>
-                                <td>21</td>
-                                <td><img src="<?= base_url('backend_assets/images/product-img/1.jpg') ?>"></td>
-                                <td>Websites</td>
-                                <td>Add</td>
-                                <td>5</td>
-                               <td><i class="fa fa-pencil" aria-hidden="true" id="edit"></i> <i class="fa fa-trash" aria-hidden="true" id="delete"></i> </td>
-                              </tr>
-                               <tr>
-                                <td>21</td>
-                                <td><img src="<?= base_url('backend_assets/images/product-img/1.jpg') ?>"></td>
-                                <td>Websites</td>
-                                <td>Add</td>
-                                <td>5</td>
-                                <td><i class="fa fa-pencil" aria-hidden="true" id="edit"></i> <i class="fa fa-trash" aria-hidden="true" id="delete"></i> </td>
-                              </tr>
+                             <?php $i++;  }  } ?>      
                             </tbody>
                           </table>
-                            <nav aria-label="Page navigation example">
+                            <!-- <nav aria-label="Page navigation example">
                               <ul class="pagination">
                                 <li class="page-item"><a class="page-link" href="#">Previous</a></li>
                                 <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -125,7 +120,7 @@
                                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
                               </ul>
-                            </nav>
+                            </nav> -->
                         </div>
                     </div>
                 </div>

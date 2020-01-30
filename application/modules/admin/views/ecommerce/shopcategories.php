@@ -23,7 +23,7 @@
         <?php
     }
     ?>
-    <a href="javascript:void(0);" data-toggle="modal" data-target="#add_edit_articles" class="btn btn-primary btn-xs pull-right" style="margin-bottom:10px;"><b>+</b> Add shop categorie</a>
+    <a href="javascript:void(0);" data-toggle="modal" data-target="#add_edit_articles" class="btn btn-primary  pull-right" style="margin-bottom:10px;"><b>+</b> Add shop categorie</a>
     <div class="clearfix"></div>
     <?php
     if (!empty($shop_categories)) {
@@ -44,14 +44,15 @@
                 foreach ($shop_categories as $key_cat => $shop_categorie) {
                     $catName = '';
                     foreach ($shop_categorie['info'] as $ff) {
+                        if( $ff['abbr'] == 'en'){
                         $catName .= '<div>'
                                 . '<a href="javascript:void(0);" class="editCategorie" data-indic="' . $i . '" data-for-id="' . $key_cat . '" data-abbr="' . $ff['abbr'] . '" data-toggle="tooltip" data-placement="top" title="Edit this categorie">'
                                 . '<i class="fa fa-pencil" aria-hidden="true"></i>'
                                 . '</a> '
-                                . '[' . $ff['abbr'] . ']<span id="indic-' . $i . '">' . $ff['name'] . '</span>'
+                                . '<span id="indic-' . $i . '">' . $ff['name'] . '</span>'
                                 . '</div>';
                         $i++;
-                    }
+                    } }
                     ?>
                     <tr>
                         <td><?= $key_cat ?></td>
@@ -71,7 +72,7 @@
                             <span id="position-<?= $key_cat ?>"><?= $shop_categorie['position'] ?></span>
                         </td>
                         <td class="text-center">
-                            <a href="<?= base_url('admin/shopcategories/?delete=' . $key_cat) ?>" class="btn btn-danger btn-xs confirm-delete"><span class="glyphicon glyphicon-remove"></span> Del</a>
+                            <a href="<?= base_url('admin/shopcategories/?delete=' . $key_cat) ?>" class="jsgrid-button jsgrid-delete-button"> Del</a>
                         </td>
                     </tr>
                     <?php
@@ -97,23 +98,25 @@
                         <h4 class="modal-title" id="myModalLabel">Add Category</h4>
                     </div>
                     <div class="modal-body">
-                        <?php foreach ($languages as $language) { ?>
-                            <input type="hidden" name="translations[]" value="<?= $language->abbr ?>">
-                        <?php } foreach ($languages as $language) { ?>
+                            <input type="hidden" name="translations[]" value="en" >
+                      
                             <div class="form-group">
-                                <label>Name (<?= $language->name ?><img src="<?= base_url('attachments/lang_flags/' . $language->flag) ?>" alt="">)</label>
+                                <label>Name</label>
                                 <input type="text" name="categorie_name[]" class="form-control">
                             </div>
-                        <?php } ?>
+                  
                         <div class="form-group">
                             <label>Parent <sup>this categorie will be subcategorie of parent</sup>:</label>
                             <select class="form-control" name="sub_for">
                                 <option value="0">None</option>
                                 <?php
                                 foreach ($shop_categories as $key_cat => $shop_categorie) {
+                                   
                                     $aa = '';
                                     foreach ($shop_categorie['info'] as $ff) {
-                                        $aa .= '[' . $ff['abbr'] . ']' . $ff['name'] . '/';
+                                        if($ff['abbr'] == 'en'){
+                                        $aa .=  $ff['name'];
+                                     }
                                     }
                                     ?>
                                     <option value="<?= $key_cat ?>"><?= $aa ?></option>
@@ -148,7 +151,9 @@
             foreach ($shop_categories as $key_cat => $shop_categorie) {
                 $aa = '';
                 foreach ($shop_categorie['info'] as $ff) {
-                    $aa .= '[' . $ff['abbr'] . ']' . $ff['name'] . '/';
+                    if($ff['abbr'] == 'en'){
+                    $aa .= $ff['name'];
+                    }
                 }
                 ?>
                 <option value="<?= $key_cat ?>"><?= $aa ?></option>

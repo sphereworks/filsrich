@@ -97,7 +97,7 @@ class Loop
                     <?php   
                 }
                 $i = 0;
-            
+          
                 foreach ($products as $article) {
                         if ($i == 0 && $carousel == true) {
                             $active = 'active';

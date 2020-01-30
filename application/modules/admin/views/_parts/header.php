@@ -17,6 +17,8 @@
 
     <!-- Font Awesome-->
     <link rel="stylesheet" type="text/css" href="<?= base_url('/backend_assets/css/fontawesome.css') ?>">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
  <!-- Flag icon-->
  <link rel="stylesheet" type="text/css" href="<?= base_url('/backend_assets/css/themify.css') ?>">
     <!-- Themify icon-->

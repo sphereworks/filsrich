@@ -99,44 +99,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                             <div class="see_more"><a href="all-mens-products.php" class="btn btn-solid">See More </a></div>
                         </div>
-                        <div class="tab-content secont_kids">
-                        <div class="text-title"><h3>Women's<span>Products</span></h3></div>
-                        <div class=" no-slider row">
-                            <?php
-                                if (!empty($products)) {
-                                    $load::getProducts($products, 'col-sm-4 col-md-3', false);
-                                } else {
-                                    ?>
-                                    <script>
-                                        $(document).ready(function () {
-                                            ShowNotificator('alert-info', '<?= lang('no_results') ?>');
-                                        });
-                                    </script>
-                                    <?php
-                                }
-                            ?>
-                            </div>
-                        <div class="see_more"><a href="all-womens-products.php" class="btn btn-solid">See More </a></div>
-                        </div>
-                        <div class="tab-content secont_kids">
-                        <div class="text-title"><h3>Kid's<span>Products</span></h3></div>
-                        <div class=" no-slider row">
-                            <?php
-                                if (!empty($products)) {
-                                    $load::getProducts($products, 'col-sm-4 col-md-3', false);
-                                } else {
-                                    ?>
-                                    <script>
-                                        $(document).ready(function () {
-                                            ShowNotificator('alert-info', '<?= lang('no_results') ?>');
-                                        });
-                                    </script>
-                                    <?php
-                                }
-                            ?>
-                            </div>
-                            <div class="see_more"><a href="all-kids-products.php" class="btn btn-solid">See More </a></div>
-                        </div>
                     </div>
                 </div>
             </div>
