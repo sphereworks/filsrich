@@ -147,12 +147,12 @@ jQuery(document).ready(function($) {
 
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        $('.header-fix').css('background', '#eae9e9');
+        $('.header-fix').css('background', '#fff');
         $('.header-fix').css('top', '0%');
         $('.header-fix').css('position', 'fixed');
         $('.header-fix').css('z-index', '99999');
         $('.header-fix').css('width', '100%');
-        $('.header-fix').css('box-shadow', 'rgba(226, 226, 226, 0.86) 1px 1px 1px');
+        $('.header-fix').css('box-shadow', 'rgba(226, 226, 226, 0.86) 0px 0px 5px 2px');
       } else {
         $('.header-fix').css('background', '#fff');
         $('.header-fix').css('transition', '0.9s');
@@ -183,5 +183,12 @@ $("#main-menu li [href*='"+hash+"']").parents("li").addClass("activelink");
 else
 $("#main-menu li [href*='"+curpage+"']").parents("li").addClass("activelink");
 }
+
+
+$(document).ready(function(){
+  $("#mb-account").click(function(){
+    $(".onhover-show-div").toggle();
+  });
+});
 
 // main menu active js //

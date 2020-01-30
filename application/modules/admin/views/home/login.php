@@ -6,7 +6,7 @@
                 <div class="col-md-12 p-0 card-right">
                     <div class="card tab2-card">
                         <div class="card-body">
-                        <div class="filsrich-logo"><img src="<?= base_url('/assets/filsrich-logo/logo.png') ?>" alt=""></a></div>
+                        <div class="filsrich-logo"><a href="http://dev.filsrich.com/" target="_blank"><img src="<?= base_url('/assets/filsrich-logo/logo.png') ?>" alt=""></a></div>
                             <ul class="nav nav-tabs nav-material" id="top-tab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="top-profile-tab" data-toggle="tab" href="#top-profile" role="tab" aria-controls="top-profile" aria-selected="true"><span class="icon-user mr-2"></span>Login</a>
@@ -20,7 +20,7 @@
                                     <div class="alert alert-danger"><?= $this->session->flashdata('err_login') ?></div>
                                     <?php
                                 }
-                                ?>        
+                                ?>      
                                 <form class="form-horizontal auth-form" action="" method="POST">
                                         <div class="form-group">
                                             <input required="" name="username"  class="form-control" placeholder="Username" id="exampleInputEmail1">

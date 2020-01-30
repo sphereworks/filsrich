@@ -5,91 +5,6 @@ if( base_url(uri_string()) != base_url().'admin') { ?>
 
 <!-- add footer section start here -->
 <footer>
-<section class="footer-bck">
-        <div class="container">
-            <div class="row footer-theme partition-f">
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-title footer-mobile-title">
-                        <h4>about</h4>
-                    </div>
-                    <div class="footer-contant">
-                        <div class="footer-logo">
-                            <a href="<?= base_url().'admin/home' ?>"><img src="<?= base_url('backend_assets/images/filsrich-logo/logo-foot.png') ?>" alt=""></a>
-                        </div>
-                        <p>Filsrich India Pvt Ltd. provides the product focusing the Tiny, Small, Medium businesses. Also benefiting Manufacturers, Wholesalers, Traders, Retailers by bringing all under one roof. Get Ready to buy New Apparel to start business opportunities. </p>
-                        <div class="footer-social">
-                            <ul>
-                                <li>
-                                    <a href="https://www.facebook.com/filsrich/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/filsrich/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://twitter.com/filsrichindia" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linkedin.com/company/filsrich/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.pinterest.ca/filsrichindia/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col offset-xl-1">
-                    <div class="sub-title">
-                        <div class="footer-title">
-                            <h4>Product</h4>
-                            <hr class="hr-foot">
-                        </div>
-                        <div class="footer-contant">
-                            <ul>
-                                <li><a href="all-mens-products.php">Men's</a></li>
-                                <li><a href="all-womens-products.php">Women's</a></li>
-                                <li><a href="all-kids-products.php">kid's</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="sub-title">
-                        <div class="footer-title">
-                            <h4>Information</h4>
-                             <hr class="hr-foot">
-                        </div>
-                        <div class="footer-contant">
-                            <ul>
-                                <li><a href="about-us.php">About Us</a></li>
-                                <li><a href="term-conditions.php">Term & Conditions</a></li>
-                                <li><a href="return-policy.php">Return Policy</a></li>
-                                <li><a href="privacy-policy.php">Privacy Policy</a></li>
-                                <li><a href="disclaimer.php">Disclaimer</a></li>
-                                <li><a href="contact-us.php">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="sub-title">
-                        <div class="footer-title">
-                            <h4>Location</h4>
-                             <hr class="hr-foot">
-                        </div>
-                        <div class="footer-contant">
-                            <ul class="contact-list">
-                                <li><i class="fa fa-map-marker"></i>B-02, H-140, BSI Business Park,Sector-63, Noida, Uttar Pradesh-201301</li>
-                                <li><i class="fa fa-phone"></i>Call Us: <a href="mailto:+91 – 9871046943">+91 – 9871046943</a></li>
-                                <li><i class="fa fa-envelope-o"></i>Email Us: <a href="mailto: filsrichindia@gmail.com">filsrichindia@gmail.com</a><br><a href="mailto: info@filsrich.com" class="second-mail">
-                                info@filsrich.com</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-</section>
 <div class="sub-footer ">
     <div class="container">
         <div class="row">
@@ -224,7 +139,7 @@ if( base_url(uri_string()) != base_url().'admin') { ?>
             dots: true
         }
     );
-
+    
 function readURL(input) {
   if (input.files && input.files[0]) {
     var reader = new FileReader();

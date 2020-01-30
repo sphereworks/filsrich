@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="theme-tab">
                     <div class="tab-content-cls">
                         <div class="tab-content active default" >
-                            <div class="text-title"><h3>Men's <span>Products</span></h3></div>
+                            <div class="text-title1"><a href="all-mens-products.php">Men's <span>Products</span></a></div>
                             <div class="no-slider row">
                                 <?php
                                 if (!empty($products)) {
@@ -98,6 +98,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 ?>
                             </div>
                             <div class="see_more"><a href="all-mens-products.php" class="btn btn-solid">See More </a></div>
+                        </div>
+                        <div class="tab-content secont_kids">
+                        <div class="text-title1"><a href="all-womens-products.php">Women's <span>Products</span></a></div>
+                        <div class=" no-slider row">
+                            <?php
+                                if (!empty($products)) {
+                                    $load::getProducts($products, 'col-sm-4 col-md-3', false);
+                                } else {
+                                    ?>
+                                    <script>
+                                        $(document).ready(function () {
+                                            ShowNotificator('alert-info', '<?= lang('no_results') ?>');
+                                        });
+                                    </script>
+                                    <?php
+                                }
+                            ?>
+                            </div>
+                        <div class="see_more"><a href="all-womens-products.php" class="btn btn-solid">See More </a></div>
+                        </div>
+                        <div class="tab-content secont_kids">
+                        <div class="text-title1"><a href="all-kids-products.php">Kid's <span>Products</span></a></div>
+                        <div class=" no-slider row">
+                            <?php
+                                if (!empty($products)) {
+                                    $load::getProducts($products, 'col-sm-4 col-md-3', false);
+                                } else {
+                                    ?>
+                                    <script>
+                                        $(document).ready(function () {
+                                            ShowNotificator('alert-info', '<?= lang('no_results') ?>');
+                                        });
+                                    </script>
+                                    <?php
+                                }
+                            ?>
+                            </div>
+                            <div class="see_more"><a href="all-kids-products.php" class="btn btn-solid">See More </a></div>
                         </div>
                     </div>
                 </div>
@@ -167,7 +205,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <button data-toggle="modal" data-target="#addtocart" title="Add to cart"><i class="ti-shopping-cart" ></i></button>
                                                 <a href="javascript:void(0)" title="Add to Wishlist"><i class="fa fa-heart" aria-hidden="true"></i></a>
                                                 <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-                                                <a href="#" title="Compare"><i class="fa fa-refresh" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -196,7 +233,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <button data-toggle="modal" data-target="#addtocart" title="Add to cart"><i class="ti-shopping-cart" ></i></button>
                                                 <a href="javascript:void(0)" title="Add to Wishlist"><i class="fa fa-heart" aria-hidden="true"></i></a>
                                                 <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-                                                <a href="#" title="Compare"><i class="fa fa-refresh" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -233,7 +269,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <button data-toggle="modal" data-target="#addtocart" title="Add to cart"><i class="ti-shopping-cart" ></i></button>
                                                 <a href="javascript:void(0)" title="Add to Wishlist"><i class="fa fa-heart" aria-hidden="true"></i></a>
                                                 <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-                                                <a href="#" title="Compare"><i class="fa fa-refresh" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -262,7 +297,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <button data-toggle="modal" data-target="#addtocart" title="Add to cart"><i class="ti-shopping-cart" ></i></button>
                                                 <a href="javascript:void(0)" title="Add to Wishlist"><i class="fa fa-heart" aria-hidden="true"></i></a>
                                                 <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-                                                <a href="#" title="Compare"><i class="fa fa-refresh" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -299,7 +333,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <button data-toggle="modal" data-target="#addtocart" title="Add to cart"><i class="ti-shopping-cart" ></i></button>
                                                 <a href="javascript:void(0)" title="Add to Wishlist"><i class="fa fa-heart" aria-hidden="true"></i></a>
                                                 <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-                                                <a href="#" title="Compare"><i class="fa fa-refresh" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -328,7 +361,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <button data-toggle="modal" data-target="#addtocart" title="Add to cart"><i class="ti-shopping-cart" ></i></button>
                                                 <a href="javascript:void(0)" title="Add to Wishlist"><i class="fa fa-heart" aria-hidden="true"></i></a>
                                                 <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-                                                <a href="#" title="Compare"><i class="fa fa-refresh" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -365,7 +397,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <button data-toggle="modal" data-target="#addtocart" title="Add to cart"><i class="ti-shopping-cart" ></i></button>
                                                 <a href="javascript:void(0)" title="Add to Wishlist"><i class="fa fa-heart" aria-hidden="true"></i></a>
                                                 <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-                                                <a href="#" title="Compare"><i class="fa fa-refresh" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -394,7 +425,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <button data-toggle="modal" data-target="#addtocart" title="Add to cart"><i class="ti-shopping-cart" ></i></button>
                                                 <a href="javascript:void(0)" title="Add to Wishlist"><i class="fa fa-heart" aria-hidden="true"></i></a>
                                                 <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-                                                <a href="#" title="Compare"><i class="fa fa-refresh" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
                                     </div>

@@ -9,30 +9,22 @@
     <meta name="author" content="filsrich">
     <link rel="icon" href="<?= base_url('/assets/filsrich-logo/favicon.png') ?>" type="image/x-icon"/>
     <link rel="shortcut icon" href="<?= base_url('/assets/filsrich-logo/favicon.png') ?>" type="image/x-icon"/>
-    <title> Wholesale online shopping sites | b2b online store</title>
-
+    <title> Wholesale online shopping sites | b2b online store </title>
     <!--Google font-->
     <link href22="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-
     <!-- Icons -->
     <link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/fontawesome.css') ?>">
-
     <!--Slick slider css-->
     <link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/slick.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/slick-theme.css') ?>">
-
     <!-- Animate icon -->
     <link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/animate.css') ?>">
-
     <!-- Themify icon -->
     <link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/themify-icons.css') ?>">
-
     <!-- Bootstrap css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/bootstrap.css') ?>">
-
     <!-- magnific css -->
     <link rel="stylesheet" href="<?= base_url('/assets/css/magnific-popup.css') ?>">
-
     <!-- Theme css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/color17.css') ?>" media="screen" id="color">
 </head>
@@ -72,7 +64,7 @@
                 </div>
                 <div class="col-lg-4 text-right my-account">
                     <ul class="header-dropdown">
-                        <li class="onhover-dropdown mobile-account">
+                        <li class="onhover-dropdown mobile-account" id="mb-account">
                             <i class="fa fa-user" aria-hidden="true"></i> My Account
                             <ul class="onhover-show-div">
                                 <li><a href="#" data-lng="en">Login</a></li>

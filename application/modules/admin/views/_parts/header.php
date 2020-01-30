@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <meta name="description" content="Filsrich admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Filsrich admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="pixelstrap">
@@ -17,8 +17,6 @@
 
     <!-- Font Awesome-->
     <link rel="stylesheet" type="text/css" href="<?= base_url('/backend_assets/css/fontawesome.css') ?>">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
  <!-- Flag icon-->
  <link rel="stylesheet" type="text/css" href="<?= base_url('/backend_assets/css/themify.css') ?>">
     <!-- Themify icon-->
@@ -165,15 +163,42 @@ if( base_url(uri_string()) != base_url().'admin') { ?>
                     <a href="http://dev.filsrich.com/" target="_blank">filsrich.com</a>
                 </div>
                 <ul class="sidebar-menu">
-                    <li><a class="sidebar-header" href="<?= base_url('admin') ?>"><i data-feather="home"></i><span>Dashboard</span></a></li>
-                    <li><a class="sidebar-header" href="#"><i data-feather="box"></i> <span>Products</span><i class="fa fa-angle-right pull-right"></i></a>
+                    <li><a class="sidebar-header" href="<?= base_url('admin') ?>"><i class="fa fa-home" aria-hidden="true"></i> <span>Dashboard</span></a></li>
+                    <li><a class="sidebar-header" href="#"><i class="fa fa-codepen" aria-hidden="true"></i> <span>Products</span><i class="fa fa-angle-right pull-right"></i></a>
                         <ul class="sidebar-submenu">
-                                    <li><a href="<?= base_url('admin/shopcategories') ?>" <?= urldecode(uri_string()) == 'admin/shopcategories' ? 'class="active"' : '' ?>><i class="fa fa-list-alt" aria-hidden="true"></i>Categories</a></li>
-                                    <li><a href="<?= base_url('admin/products') ?>" <?= urldecode(uri_string()) == 'admin/products' ? 'class="active"' : '' ?>><i class="fa fa-files-o" aria-hidden="true"></i> Product List</a></li>
-                                    <!-- <li><a href="product-detail.html"><i class="fa fa-circle"></i>Product Detail</a></li> -->
-                                    <li><a href="<?= base_url('admin/publish') ?>" <?= urldecode(uri_string()) == 'admin/publish' ? 'class="active"' : '' ?>><i class="fa fa-edit"></i>Add Product</a></li>
+                            <li><a href="<?= base_url('admin/shopcategories') ?>" <?= urldecode(uri_string()) == 'admin/shopcategories' ? 'class="active"' : '' ?>><i class="fa fa-list-alt" aria-hidden="true"></i>Categories</a>
+                            </li>
+                            <li><a href="<?= base_url('admin/products') ?>" <?= urldecode(uri_string()) == 'admin/products' ? 'class="active"' : '' ?>><i class="fa fa-files-o" aria-hidden="true"></i> Product List</a>
+                            </li>
+                            <li><a href="<?= base_url('admin/publish') ?>" <?= urldecode(uri_string()) == 'admin/publish' ? 'class="active"' : '' ?>><i class="fa fa-inr" aria-hidden="true"></i> Add Product</a>
+                            </li>
+                           <li><a href="product-detail.php"><i class="fa fa-info" aria-hidden="true"></i> Product Detail</a></li>
                         </ul>
                     </li>
+                    <li><a class="sidebar-header" href="#"><i class="fa fa-inr" aria-hidden="true"></i> <span>Sales</span><i class="fa fa-angle-right pull-right"></i></a>
+                    <ul class="sidebar-submenu">
+                        <li><a href="order.php"><i class="fa fa-first-order" aria-hidden="true"></i>  Orders</a></li>
+                        <li><a href="transactions.php"><i class="fa fa-exchange" aria-hidden="true"></i>  Transactions</a></li>
+                    </ul>
+                   </li>
+                   <li><a class="sidebar-header" href="#"><i class="fa fa-clipboard" aria-hidden="true"></i> <span>Pages</span><i class="fa fa-angle-right pull-right"></i></a>
+                    <ul class="sidebar-submenu">
+                        <li><a href="list-pages.php"><i class="fa fa-list-ul" aria-hidden="true"></i> List Page</a></li>
+                        <li><a href="create-page.php"><i class="fa fa-plus" aria-hidden="true"></i> Create Page</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar-header" href="media.php"><i class="fa fa-camera" aria-hidden="true"></i> <span>Media</span></a>
+                </li>
+                <li><a class="sidebar-header" href=""><i class="fa fa-user" aria-hidden="true"></i> <span>Users</span><i class="fa fa-angle-right pull-right"></i></a>
+                    <ul class="sidebar-submenu">
+                        <li><a href="user-list.php"><i class="fa fa-users" aria-hidden="true"></i> User List</a></li>
+                        <li><a href="create-user.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Create User</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar-header" href="reports.php"><i class="fa fa-bar-chart" aria-hidden="true"></i> <span>Reports</span></a></li>
+                 <li><a class="sidebar-header" href="profile.php"><i class="fa fa-cog" aria-hidden="true"></i> <span>Settings</span></a>
+                 </li>
+                  <li><a href="<?= base_url('admin/logout') ?>" class="sidebar-header"><i class="fa fa-sign-out" aria-hidden="true"></i> <span>Logout</span></a></li>
                 </ul>
             </div>
         </div>
