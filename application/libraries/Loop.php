@@ -73,7 +73,7 @@ class Loop
         }
     }
 
-    static public function getProducts($products, $classes = '', $carousel = false)
+    static public function getProducts($products, $catid, $classes = '', $carousel = false)
     {
         if ($carousel == true) {
             ?>
@@ -99,6 +99,7 @@ class Loop
                 $i = 0;
             
                 foreach ($products as $article) {
+                        if($article['shop_categorie'] == $catid){
                         if ($i == 0 && $carousel == true) {
                             $active = 'active';
                         } else {
@@ -127,7 +128,7 @@ class Loop
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <a href="<?= $article['vendor_url'] == null ? LANG_URL . '/' . $article['url'] : LANG_URL . '/' . $article['vendor_url'] . '/' . $article['url'] ?>"><h6><?= character_limiter($article['title'], 70) ?><h6></a>
-                                <h4><i class="fa fa-inr" aria-hidden="true"></i><?= lang('price') ?>: <span><?= $article['price'] != '' ? number_format($article['price'], 2) : 0 ?><?= CURRENCY ?></h4>
+                                <h4><?= lang('price') ?>: <span><i class="fa fa-inr" aria-hidden="true"></i><?= $article['price'] != '' ? number_format($article['price'], 2) : 0 ?></h4>
                                 <ul class="color-variant">
                                     <li class="bg-light0"></li>
                                     <li class="bg-light1"></li>
@@ -136,8 +137,7 @@ class Loop
                                 <div class="cart-bottom">
                                     <button data-toggle="modal" data-target="#addtocart" title="Add to cart"><i class="ti-shopping-cart" ></i></button>
                                     <a href="javascript:void(0)"  title="Add to Wishlist"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-                                    <a href="#" title="Compare"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -145,6 +145,6 @@ class Loop
 
                         <?php
                         $i++;
-                }
+                } }
     }
 }

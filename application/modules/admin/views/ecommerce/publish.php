@@ -79,9 +79,6 @@ if ($this->session->flashdata('result_publish')) {
 <!-- Container-fluid Ends-->
 
 
-
-<!-- Container-fluid starts-->
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
@@ -147,6 +144,12 @@ if ($this->session->flashdata('result_publish')) {
                                             <li><div class="box-input-file"><input class="upload" type="file"  id="userfile" name="userfile"><i class="fa fa-plus"></i></div></li>
                                         </ul>
                                     </div>
+                                    <div class="form-group bordered-group">
+        <div class="others-images-container">
+            <?= $otherImgs ?>
+        </div>
+        <a href="javascript:void(0);" data-toggle="modal" data-target="#modalMoreImages" class="btn btn-default">Upload more images</a>
+    </div>
                                 </div>
                         <div class="col-md-8 input_css">
                             <form class="needs-validation add-product-form" id="pub_form" novalidate="">

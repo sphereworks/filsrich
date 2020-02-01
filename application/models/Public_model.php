@@ -87,9 +87,10 @@ class Public_model extends CI_Model
         if (!empty($big_get) && isset($big_get['category'])) {
             $this->getFilter($big_get);
         }
-        $this->db->select('vendors.url as vendor_url, products.id,products.image, products.quantity, products_translations.title, products_translations.price, products_translations.old_price, products.url');
+        $this->db->select('vendors.url as vendor_url, products.id,products.image, products.quantity, products_translations.title, products_translations.price, products_translations.old_price, products.url , products.shop_categorie, shop_categories_translations.name as categories');
         $this->db->join('products_translations', 'products_translations.for_id = products.id', 'left');
         $this->db->join('vendors', 'vendors.id = products.vendor_id', 'left');
+        $this->db->join('shop_categories_translations', 'shop_categories_translations.for_id = products.shop_categorie', 'left');
         $this->db->where('products_translations.abbr', MY_LANGUAGE_ABBR);
         $this->db->where('visibility', 1);
         if ($vendor_id !== false) {

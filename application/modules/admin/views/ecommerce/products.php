@@ -48,104 +48,6 @@
 
 <div class="container-fluid">
 
-    <!-- <div class="row products-admin ratio_asos">
-
-<?php 
-
-    // if ($products) {
-
-    //     foreach ($products as $row) {
-
-    //     $u_path = 'attachments/shop_images/';
-
-    //         if ($row->image != null && file_exists($u_path . $row->image)) {
-
-    //             $image = base_url($u_path . $row->image);
-
-    //         } else {
-
-    //             $image = base_url('attachments/no-image.png');
-
-    //         }
-
-        ?>
-
-
-
-                <div class="col-xl-3 col-sm-6">
-
-                    <div class="card">
-
-                        <div class="card-body product-box">
-
-                            <div class="img-wrapper">
-
-                                <div class="front">
-
-                                    <a href="#"><img src="<?= $image ?>" class="img-fluid blur-up lazyload bg-img" alt=""></a>
-
-                                    <div class="product-hover">
-
-                                          <ul>
-
-                                            <li>
-
-                                                <a href="<?= base_url('admin/publish/' . $row->id) ?>"class="btn" type="button" data-original-title="" title=""><i class="ti-pencil-alt"></i></a>
-
-                                            </li>
-
-                                            <li>
-
-                                                <a href="<?= base_url('admin/products?delete=' . $row->id) ?>" class="btn" type="button" data-original-title="" title=""><i class="ti-trash"></i></a>
-
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="product-detail">
-
-                                <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>
-
-                                <a href="#">
-
-                                    <h6> <?= $row->title ?></h6>
-
-                                </a>
-
-                                <h4><?= $row->price ?></h4>
-
-                                <ul class="color-variant">
-
-                                    <li class="bg-light0"></li>
-
-                                    <li class="bg-light1"></li>
-
-                                    <li class="bg-light2"></li>
-
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-     <?php  // } } ?> 
-
-
-
-        </div> -->
-
-
-
         <div class="products_list">
 
             <div class="container-fluid">
@@ -172,7 +74,7 @@
 
                                 <th>Product Title</th>
 
-                                 <th>Entry Type</th>
+                                 <th>Category</th>
 
                                 <th>Quantity</th>
 
@@ -184,12 +86,16 @@
 
                             <tbody>
 
-                            <?php
+                            <?php 
+                        // echo '<pre>';
+                        // print_r($shop_categories);
+                        // die;
+
 
                             if ($products) { $i = 1;
 
                                 foreach ($products as $row) {
-
+                                    
                                 $u_path = 'attachments/shop_images/';
 
                                     if ($row->image != null && file_exists($u_path . $row->image)) {
@@ -212,7 +118,7 @@
 
                                 <td><?= $row->title ?></td>
 
-                                <td>Add</td>
+                                <td><?= $shop_categories[$row->shop_categorie]['info'][0]['name'] ?></td>
 
                                 <td><?= $row->quantity ?></td>
 
@@ -226,24 +132,7 @@
 
                           </table>
 
-                            <!-- <nav aria-label="Page navigation example">
-
-                              <ul class="pagination">
-
-                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-
-                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-
-                              </ul>
-
-                            </nav> -->
-
+                
                         </div>
 
                     </div>
